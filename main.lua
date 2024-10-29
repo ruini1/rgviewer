@@ -5,8 +5,9 @@ print("P or L?")
 local input = string.lower(io.read())
 local method = nil
 local id = nil
+local url
 
-local function send(method, id)
+local function send(method)
   local url = "https://gdbrowser.com/api/".. method .. "/".. id
   local response = {}
 
