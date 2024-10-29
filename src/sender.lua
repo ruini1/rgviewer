@@ -1,12 +1,11 @@
 local socket = require("http.socket") -- assuming that it works
-local a
 local method
 local profile
 local id
 
 
 function send(type)
-  local url = "https://gdbrowser.com/api/"..method"/"..id
+  local url = "https://gdbrowser.com/api/"..method"/"..id--
   local response = {}
 
   local res,code,response_head = http.request{
@@ -16,8 +15,10 @@ function send(type)
 
   -- get the actual thing
   if response = "200" then
-    print("api responded with: " .. table.concat(response))
+    local out = print("api responded with: " .. table.concat(response))
+    return out -- hopefully this actually works lmao
   else
-    error("oops" .. code)
+    local out = ("oops" .. code)
+    return out
   end
 end
