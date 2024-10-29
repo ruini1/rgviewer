@@ -1,14 +1,14 @@
 local http = require("socket.http")
 local ltn12 = require("ltn12")
 
-print("P or L?")
+--print("P or L?")
 local input = string.lower(io.read())
 local method = nil
 local id = nil
 local url
 
 local function send(method)
-  local url = "https://gdbrowser.com/api/".. method .. "/".. id
+  local url = "http://127.0.0.1:5000/api/" .. method .. "/"
   local response = {}
 
   local res, code, response_head = http.request{
@@ -23,24 +23,12 @@ local function send(method)
   end
 end
 
-if input == "p" then
-  method = "profile"
-  print("Insert ID:")
-  local profile_id = io.read('*n')
-  if profile_id and profile_id > 0 then
-    print(send(method, profile_id))
-  else
-    print("Invalid ID entered.")
+if input == "hello" then
+    print(send(input))
   end
-elseif input == "l" then
-  method = "level"
-  print("Insert ID:")
-  local level_id = io.read('*n')
-  if level_id and level_id >= 256 then
-    print(send(method, level_id))
-  else
-    print("Invalid ID entered.")
+elseif input == "data" then
+    print(send(method))
   end
 else
-  print("Invalid option. Please enter 'P' or 'L'.")
+  print("enter a valid endpoint")
 end
