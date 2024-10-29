@@ -5,7 +5,7 @@ local id
 
 
 function send(type)
-  local url = "https://gdbrowser.com/api/"..method"/"..id--
+  local url = "https://gdbrowser.com/api/"..method"/"..id
   local response = {}
 
   local res,code,response_head = http.request{
