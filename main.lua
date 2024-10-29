@@ -35,7 +35,7 @@ if input == "p" then
     send(method, input)
   end
 elseif input == "l" then
-  method = "level
+  method = "level"
   print("insert id")
   input = io.read('*n')
   if input ~= nil and input >= 256 then
