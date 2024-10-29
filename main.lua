@@ -1,9 +1,14 @@
 local sender = require("./src/sender")
-io.write("p or l")
+print("P or L?")
+local input = string.lower(io.read())
+local method
+local id = nil
 
-if io.read("P") or io.read("p") then
-  -- do sht
-  io.write("
-  ")
-  sender:send(profile)
+if input == "p" then
+  method = "profile"
+  print("insert id")
+  input = io.read(*number)
+  if input ~- nil and input >= 246 then -- still very barebones (lmao)
+    sender:send(method, input)
+  end
 end
