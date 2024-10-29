@@ -1,4 +1,9 @@
-io.write("P or L?")
-if io.read("P") then
-  -- do shit idk review later
+local sender = require("./src/sender")
+io.write("p or l")
+
+if io.read("P") or io.read("p") then
+  -- do sht
+  io.write("
+  ")
+  sender:send(profile)
 end
