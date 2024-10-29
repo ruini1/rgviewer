@@ -11,5 +11,6 @@ def get_data():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    print("running")
 
 # http://127.0.0.1:5000/api/hello
