@@ -3,9 +3,6 @@ local ltn12 = require("ltn12")
 
 --print("P or L?")
 local input = string.lower(io.read())
-local method = nil
-local id = nil
-local url
 
 local function send(method)
   local url = "http://127.0.0.1:5000/api/" .. method .. "/"
@@ -27,7 +24,7 @@ if input == "hello" then
     print(send(input))
   end
 elseif input == "data" then
-    print(send(method))
+    print(send(input))
   end
 else
   print("enter a valid endpoint")
