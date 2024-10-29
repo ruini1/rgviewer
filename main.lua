@@ -5,7 +5,7 @@ local ltn12 = require("ltn12")
 local input = string.lower(io.read())
 
 local function send(method)
-  local url = "http://127.0.0.1:5000/api/" .. method .. "/"
+  local url = "http://127.0.0.1:5000/api/" .. method
   local response = {}
 
   local res, code, response_head = http.request{
@@ -24,6 +24,8 @@ if input == "hello" then
     print(send(input))
 elseif input == "data" then
     print(send(input))
+elseif input == "help" then
+  print(send(input))
 else
   print("enter a valid endpoint")
 end
