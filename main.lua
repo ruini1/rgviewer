@@ -10,13 +10,13 @@ if input == "p" then
   method = "profile"
   print("insert id")
   input = io.read(*n)
-  if input ~- nil and input >= 246 then -- still very barebones (lmao)
+  if input ~= nil and input >= 246 then -- still very barebones (lmao)
     send(method, input)
   end
 end
 
 function send(method, id)
-  local url = "https://gdbrowser.com/api/".. method" ../".. id
+  local url = "https://gdbrowser.com/api/".. method .. "/".. id
   local response = {}
 
   local res,code,response_head = http.request{
