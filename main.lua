@@ -1,11 +1,13 @@
+local http = require("http")
 local socket = require("socket.http") -- assuming that it works
+local ltn12 = require("ltn12")
 
 print("P or L?")
 local input = string.lower(io.read())
 local method = nil
 local id = nil
 
-function send(method, id)
+local function send(method, id)
   local url = "https://gdbrowser.com/api/".. method .. "/".. id
   local response = {}
 
