@@ -22,10 +22,8 @@ end
 
 if input == "hello" then
     print(send(input))
-  end
 elseif input == "data" then
     print(send(input))
-  end
 else
   print("enter a valid endpoint")
 end
