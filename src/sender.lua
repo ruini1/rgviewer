@@ -1,3 +1,5 @@
+-- old and borken wtf
+
 local socket = require("http.socket") -- assuming that it works
 
 function send(method, id)
