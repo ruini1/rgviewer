@@ -29,7 +29,14 @@ if input == "p" then
   method = "profile"
   print("insert id")
   input = io.read(*n)
-  if input ~= nil and input >= 246 then -- still very barebones (lmao)
+  if input ~= nil and input > 0 then -- still very barebones (lmao)
+    send(method, input)
+  end
+elseif input == "l" then
+  method = "level
+  print("insert id")
+  input = io.read(*n)
+  if input ~= nil and input >= 256 then
     send(method, input)
   end
 end
