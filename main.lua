@@ -5,16 +5,6 @@ local input = string.lower(io.read())
 local method = nil
 local id = nil
 
-
-if input == "p" then
-  method = "profile"
-  print("insert id")
-  input = io.read(*n)
-  if input ~= nil and input >= 246 then -- still very barebones (lmao)
-    send(method, input)
-  end
-end
-
 function send(method, id)
   local url = "https://gdbrowser.com/api/".. method .. "/".. id
   local response = {}
@@ -31,5 +21,15 @@ function send(method, id)
   else
     local out = ("oops" .. code)
     return out
+  end
+end
+
+
+if input == "p" then
+  method = "profile"
+  print("insert id")
+  input = io.read(*n)
+  if input ~= nil and input >= 246 then -- still very barebones (lmao)
+    send(method, input)
   end
 end
