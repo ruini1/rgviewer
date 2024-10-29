@@ -1,10 +1,6 @@
 local socket = require("http.socket") -- assuming that it works
-local method
-local profile
-local id
 
-
-function send(type)
+function send(method, id)
   local url = "https://gdbrowser.com/api/"..method"/"..id
   local response = {}
 
