@@ -1,11 +1,12 @@
 local socket = require("http.socket") -- assuming that it works
-local level
+local a
+local method
 local profile
 local id
 
 
 function send(type)
-  local url = "https://gdbrowser.com/api/"..type"/"..id
+  local url = "https://gdbrowser.com/api/"..method"/"..id
   local response = {}
 
   local res,code,response_head = http.request{
